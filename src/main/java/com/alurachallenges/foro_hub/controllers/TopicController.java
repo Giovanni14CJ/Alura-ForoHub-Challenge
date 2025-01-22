@@ -71,7 +71,7 @@ public class TopicController
         Topic topic = repository.getReferenceById(id);
         var topicData = new TopicData(
           topic.getId(),
-          topic.getUsuario().getId(),
+          (topic.getUsuario().getId() != null) ? topic.getUsuario().getId() : null,
           topic.getCurso(),
           topic.getTitulo(),
           topic.getMensaje(),
